@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Restricted BOX</title>
+    <style>
+        .component {
+            border: 0.5mm dashed transparent;
+        }
+        #enclosure {
+            background-color: #404040;
+            width: 186mm;
+            height: 118mm;
+            border-radius: 3mm;
+        }
+        #board-box {
+            position: absolute;
+            width: 170mm;
+            height: 100mm;
+            border: 0.5mm dashed transparent;
+            top: 11mm;
+            left: 10mm;
+        }
+        #left-panel {
+            position: absolute;
+            left: 2.5mm;
+            top: 5mm;
+            width: 40mm;
+            height: inherit;
+        }
+        #encoder {
+            /*background-color: #795f5f;*/
+            height: 14.5mm;
+            text-align: center;
+        }
+        #oled {
+            /*
+                28mm x 27mm I2C OLED display
+             */
+            height: 27mm;
+            margin-bottom: 6mm;
+        }
+        #screen {
+            position: relative;
+            width: 28mm;
+            height: 15mm;
+            top: 5mm;
+            left: 5.5mm;
+        }
+        #screen > img {
+            width: inherit;
+            height: 15mm;
+        }
+        #nav {
+            position: relative;
+            /*background-color: #5f8c96;*/
+            height: 45mm;
+            text-align: center;
+        }
+        #right-panel {
+            position: absolute;
+            right: 2.5mm;
+            top: 5mm;
+            width: 120mm;
+            height: inherit;
+        }
+        #right-panel::before {
+            font-family: monospace;
+            font-size: xx-large;
+            position: absolute;
+            content: "Restrictor RB-1";
+            margin-top: -10mm;
+            margin-left: 60mm;
+            color: #82006c;
+            text-shadow: -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff, 1px 1px 0 #fff;
+        }
+        #knobs {
+            /*background-color: #795f5f;*/
+            height: 15mm; /* 12.7mm adafruit knob covers */
+        }
+        #menu {
+            /*background-color: #796c5f;*/
+            height: 15mm;
+            margin-top: 2.5mm;
+        }
+        #grid {
+            position: relative;
+            /*background-color: #5f6879;*/
+            height: 60mm;
+        }
+        .knob {
+            display: inline-block;
+            border-radius: 50%;
+            width: 12.7mm;
+            height: 12.7mm;
+            background-color: #507c91;
+            margin: 0.63mm;
+        }
+        #encoder > .knob:first-child {
+            margin-right: 6mm;
+        }
+        #encoder > .knob:first-child::after {
+            font-family: sans-serif;
+            font-size: x-small;
+            position: absolute;
+            content: "Volume";
+            margin-top: 13mm;
+            margin-left: -6.7mm;
+            color: #ffffff;
+            /* background-color: #2b64a59e; */
+            width: 13mm;
+        }
+        #encoder > .knob:nth-child(2)::after {
+            font-family: sans-serif;
+            font-size: x-small;
+            position: absolute;
+            content: "Data";
+            margin-top: 13mm;
+            margin-left: -6.7mm;
+            color: #ffffff;
+            /* background-color: #2b64a59e; */
+            width: 13mm;
+        }
+        #knobs > .knob:nth-child(1)::after {
+            font-family: sans-serif;
+            font-size: x-small;
+            position: absolute;
+            content: "C1";
+            margin-top: 13mm;
+            margin-left: 4.7mm;
+            color: #ffffff;
+            /* background-color: #2b64a59e; */
+            width: 13mm;
+        }
+        #knobs > .knob:nth-child(2)::after {
+            font-family: sans-serif;
+            font-size: x-small;
+            position: absolute;
+            content: "C2";
+            margin-top: 13mm;
+            margin-left: 4.7mm;
+            color: #ffffff;
+            /* background-color: #2b64a59e; */
+            width: 13mm;
+        }
+        #knobs > .knob:nth-child(3)::after {
+            font-family: sans-serif;
+            font-size: x-small;
+            position: absolute;
+            content: "C3";
+            margin-top: 13mm;
+            margin-left: 4.7mm;
+            color: #ffffff;
+            /* background-color: #2b64a59e; */
+            width: 13mm;
+        }
+        #knobs > .knob:nth-child(4)::after {
+            font-family: sans-serif;
+            font-size: x-small;
+            position: absolute;
+            content: "C4";
+            margin-top: 13mm;
+            margin-left: 4.7mm;
+            color: #ffffff;
+            /* background-color: #2b64a59e; */
+            width: 13mm;
+        }
+        #knobs > .knob:nth-child(5)::after {
+            font-family: sans-serif;
+            font-size: x-small;
+            position: absolute;
+            content: "C5";
+            margin-top: 13mm;
+            margin-left: 4.7mm;
+            color: #ffffff;
+            /* background-color: #2b64a59e; */
+            width: 13mm;
+        }
+        #knobs > .knob:nth-child(6)::after {
+            font-family: sans-serif;
+            font-size: x-small;
+            position: absolute;
+            content: "C6";
+            margin-top: 13mm;
+            margin-left: 4.7mm;
+            color: #ffffff;
+            /* background-color: #2b64a59e; */
+            width: 13mm;
+        }
+        #knobs > .knob:nth-child(7)::after {
+            font-family: sans-serif;
+            font-size: x-small;
+            position: absolute;
+            content: "C7";
+            margin-top: 13mm;
+            margin-left: 4.7mm;
+            color: #ffffff;
+            /* background-color: #2b64a59e; */
+            width: 13mm;
+        }
+        #knobs > .knob:nth-child(8)::after {
+            font-family: sans-serif;
+            font-size: x-small;
+            position: absolute;
+            content: "C8";
+            margin-top: 13mm;
+            margin-left: 4.7mm;
+            color: #ffffff;
+            /* background-color: #2b64a59e; */
+            width: 13mm;
+        }
+        .rubber-button {
+            display: inline-block;
+            width: 10mm;
+            height: 10mm;
+            margin: 1.98mm;
+            background-color: #5c7b83;
+            border-radius: 1mm;
+        }
+        #nav > .rubber-button:nth-child(1)::after {
+            font-family: sans-serif;
+            font-size: x-small;
+            position: absolute;
+            content: "<";
+            margin-top: 11mm;
+            margin-left: -6.7mm;
+            color: #ffffff;
+            /* background-color: #2b64a59e; */
+            width: 13mm;
+        }
+        #nav > .rubber-button:nth-child(2)::after {
+            font-family: sans-serif;
+            font-size: x-small;
+            position: absolute;
+            content: ">";
+            margin-top: 11mm;
+            margin-left: -6.7mm;
+            color: #ffffff;
+            /* background-color: #2b64a59e; */
+            width: 13mm;
+        }
+        #nav > .rubber-button:nth-child(3)::after {
+            font-family: sans-serif;
+            font-size: x-small;
+            position: absolute;
+            content: "Shift";
+            margin-top: 11mm;
+            margin-left: -6.7mm;
+            color: #ffffff;
+            /* background-color: #2b64a59e; */
+            width: 13mm;
+        }
+        #nav > .rubber-button:nth-child(4)::after {
+            font-family: sans-serif;
+            font-size: x-small;
+            position: absolute;
+            content: "Exit";
+            margin-top: 11mm;
+            margin-left: -6.7mm;
+            color: #ffffff;
+            /* background-color: #2b64a59e; */
+            width: 13mm;
+        }
+        #nav > .rubber-button:nth-child(5)::after {
+            font-family: sans-serif;
+            font-size: x-small;
+            position: absolute;
+            content: "Play";
+            margin-top: 11mm;
+            margin-left: -6.7mm;
+            color: #ffffff;
+            /* background-color: #2b64a59e; */
+            width: 13mm;
+        }
+        #nav > .rubber-button:nth-child(6)::after {
+            font-family: sans-serif;
+            font-size: x-small;
+            position: absolute;
+            content: "Record";
+            margin-top: 11mm;
+            margin-left: -6.7mm;
+            color: #ffffff;
+            /* background-color: #2b64a59e; */
+            width: 13mm;
+        }
+
+        #menu > .rubber-button:nth-child(1)::after {
+            font-family: sans-serif;
+            font-size: x-small;
+            position: absolute;
+            content: "Track";
+            margin-top: 11mm;
+            margin-left: 1.7mm;
+            color: #ffffff;
+            /* background-color: #2b64a59e; */
+            width: 13mm;
+        }
+        #menu > .rubber-button:nth-child(2)::after {
+            font-family: sans-serif;
+            font-size: x-small;
+            position: absolute;
+            content: "Seq";
+            margin-top: 11mm;
+            margin-left: 2.7mm;
+            color: #ffffff;
+            /* background-color: #2b64a59e; */
+            width: 13mm;
+        }
+        #menu > .rubber-button:nth-child(3)::after {
+            font-family: sans-serif;
+            font-size: x-small;
+            position: absolute;
+            content: "Note";
+            margin-top: 11mm;
+            margin-left: 2.2mm;
+            color: #ffffff;
+            /* background-color: #2b64a59e; */
+            width: 13mm;
+        }
+        #menu > .rubber-button:nth-child(4)::after {
+            font-family: sans-serif;
+            font-size: x-small;
+            position: absolute;
+            content: "Clip";
+            margin-top: 11mm;
+            margin-left: 2.7mm;
+            color: #ffffff;
+            /* background-color: #2b64a59e; */
+            width: 13mm;
+        }
+        #menu > .rubber-button:nth-child(5)::after {
+            font-family: sans-serif;
+            font-size: x-small;
+            position: absolute;
+            content: "Scene";
+            margin-top: 11mm;
+            margin-left: 1.2mm;
+            color: #ffffff;
+            /* background-color: #2b64a59e; */
+            width: 13mm;
+        }
+        #menu > .rubber-button:nth-child(6)::after {
+            font-family: sans-serif;
+            font-size: x-small;
+            position: absolute;
+            content: "Project";
+            margin-top: 11mm;
+            margin-left: 1mm;
+            color: #ffffff;
+            /* background-color: #2b64a59e; */
+            width: 13mm;
+        }
+        #menu > .rubber-button:nth-child(7)::after {
+            font-family: sans-serif;
+            font-size: x-small;
+            position: absolute;
+            content: "Mixer";
+            margin-top: 11mm;
+            margin-left: 1.7mm;
+            color: #ffffff;
+            /* background-color: #2b64a59e; */
+            width: 13mm;
+        }
+
+        #grid > .rubber-button:nth-child(1)::before {
+            font-family: sans-serif;
+            font-size: x-small;
+            position: absolute;
+            content: "Synth";
+            margin-top: 6.7mm;
+            margin-left: -8.7mm;
+            color: #ffffff;
+            /* background-color: #2b64a59e; */
+            width: 13mm;
+            transform: rotate(90deg);
+        }
+        #grid > .rubber-button:nth-child(1)::after {
+            font-family: sans-serif;
+            font-size: x-small;
+            position: absolute;
+            content: "Osc";
+            margin-top: 11mm;
+            margin-left: 2.7mm;
+            color: #576998;
+            /* background-color: #2b64a59e; */
+            width: 13mm;
+        }
+        #grid > .rubber-button:nth-child(2)::after {
+            font-family: sans-serif;
+            font-size: x-small;
+            position: absolute;
+            content: "Filter";
+            margin-top: 11mm;
+            margin-left: 2.2mm;
+            color: #576998;
+            /* background-color: #2b64a59e; */
+            width: 13mm;
+        }
+        #grid > .rubber-button:nth-child(3)::after {
+            font-family: sans-serif;
+            font-size: x-small;
+            position: absolute;
+            content: "LFO";
+            margin-top: 11mm;
+            margin-left: 2.7mm;
+            color: #576998;
+            /* background-color: #2b64a59e; */
+            width: 13mm;
+        }
+        #grid > .rubber-button:nth-child(4)::after {
+            font-family: sans-serif;
+            font-size: x-small;
+            position: absolute;
+            content: "Env";
+            margin-top: 11mm;
+            margin-left: 2.7mm;
+            color: #576998;
+            /* background-color: #2b64a59e; */
+            width: 13mm;
+        }
+        #grid > .rubber-button:nth-child(5)::after {
+            font-family: sans-serif;
+            font-size: x-small;
+            position: absolute;
+            content: "FX";
+            margin-top: 11mm;
+            margin-left: 3.2mm;
+            color: #576998;
+            /* background-color: #2b64a59e; */
+            width: 13mm;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="enclosure">
+        <div id="board-box">
+            <div id="left-panel">
+                <div id="encoder" class="component">
+                    <div class="knob"></div>
+                    <div class="knob"></div>
+                </div>
+                <div id="oled" class="component">
+                    <div id="screen">
+                        <img src="screen.png" alt="screen">
+                    </div>
+                </div>
+                <div id="nav" class="component">
+                    <div class="rubber-button"></div>
+                    <div class="rubber-button"></div>
+                    <div class="rubber-button"></div>
+                    <div class="rubber-button"></div>
+                    <div class="rubber-button"></div>
+                    <div class="rubber-button"></div>
+                </div>
+            </div>
+            <div id="right-panel">
+                <div id="knobs" class="component">
+                    <div class="knob"></div>
+                    <div class="knob"></div>
+                    <div class="knob"></div>
+                    <div class="knob"></div>
+                    <div class="knob"></div>
+                    <div class="knob"></div>
+                    <div class="knob"></div>
+                    <div class="knob"></div>
+                </div>
+                <div id="menu" class="component">
+                    <div class="rubber-button"></div>
+                    <div class="rubber-button"></div>
+                    <div class="rubber-button"></div>
+                    <div class="rubber-button"></div>
+                    <div class="rubber-button"></div>
+                    <div class="rubber-button"></div>
+                    <div class="rubber-button"></div>
+                    <div class="rubber-button"></div>
+                </div>
+                <div id="grid" class="component">
+                    <div class="rubber-button"></div>
+                    <div class="rubber-button"></div>
+                    <div class="rubber-button"></div>
+                    <div class="rubber-button"></div>
+                    <div class="rubber-button"></div>
+                    <div class="rubber-button"></div>
+                    <div class="rubber-button"></div>
+                    <div class="rubber-button"></div>
+                    <div class="rubber-button"></div>
+                    <div class="rubber-button"></div>
+                    <div class="rubber-button"></div>
+                    <div class="rubber-button"></div>
+                    <div class="rubber-button"></div>
+                    <div class="rubber-button"></div>
+                    <div class="rubber-button"></div>
+                    <div class="rubber-button"></div>
+                    <div class="rubber-button"></div>
+                    <div class="rubber-button"></div>
+                    <div class="rubber-button"></div>
+                    <div class="rubber-button"></div>
+                    <div class="rubber-button"></div>
+                    <div class="rubber-button"></div>
+                    <div class="rubber-button"></div>
+                    <div class="rubber-button"></div>
+                    <div class="rubber-button"></div>
+                    <div class="rubber-button"></div>
+                    <div class="rubber-button"></div>
+                    <div class="rubber-button"></div>
+                    <div class="rubber-button"></div>
+                    <div class="rubber-button"></div>
+                    <div class="rubber-button"></div>
+                    <div class="rubber-button"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

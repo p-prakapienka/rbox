@@ -1,0 +1,299 @@
+<svg
+    version="1.1"
+    width="188mm" height="119mm"
+    xmlns="http://www.w3.org/2000/svg">
+
+    <defs>
+        <linearGradient id="main-color">
+            <stop stop-color="#943066"/>
+        </linearGradient>
+
+        <linearGradient id="enclosure-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="black" stop-opacity="0.2" />
+            <stop offset="70%" stop-color="#aaaaaa" stop-opacity="0.1" />
+            <stop offset="100%" stop-color="black" stop-opacity="0.1" />
+        </linearGradient>
+
+        <linearGradient id="enclosure-stroke-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="black" stop-opacity="0.4" />
+            <stop offset="70%" stop-color="#777777" stop-opacity="01" />
+            <stop offset="100%" stop-color="black" stop-opacity="0.4" />
+        </linearGradient>
+
+        <radialGradient id="knob-grad" cx="55%" cy="55%">
+            <stop offset="0%" stop-color="#999999" stop-opacity="0.2" />
+            <stop offset="90%" stop-color="#777777" stop-opacity="0.2" />
+            <stop offset="100%" stop-color="#111111" stop-opacity="0.3" />
+        </radialGradient>
+
+        <linearGradient id="knob-stroke-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#555555" stop-opacity="0.5" />
+            <stop offset="50%" stop-color="#777777" stop-opacity="0.4" />
+            <stop offset="100%" stop-color="#555555" stop-opacity="0.4" />
+        </linearGradient>
+
+        <radialGradient id="pad-grad">
+            <stop offset="0%" stop-color="#aaaabb" stop-opacity="1" />
+            <stop offset="100%" stop-color="#777788" stop-opacity="1" />
+        </radialGradient>
+
+        <filter id="knob-shadow" x="0" y="0" width="300%" height="300%">
+<!--            <feOffset dx="0" dy="0" />-->
+            <feDropShadow dx="5" dy="5" flood-color="#333333" flood-opacity="0.5"/>
+        </filter>
+
+        <filter id="pad-shadow">
+<!--            <feOffset dx="0" dy="0"/>-->
+            <feDropShadow dx="2" dy="2" flood-color="#333333" flood-opacity="0.5"/>
+        </filter>
+
+        <filter id='noise'>
+            <feTurbulence
+                    result="noiseOut"
+                    type='fractalNoise'
+                    baseFrequency='0.5'
+                    numOctaves='5'/>
+        </filter>
+    </defs>
+
+    <g id="background" opacity="1">
+        <rect rx="5mm" ry="5mm" width="100%" height="100%" fill="url(#main-color)" stroke="" />
+
+        <circle cx="94mm" cy="59.5mm" r="2" fill="white"/>
+    </g>
+
+    <g id="white">
+        <!-- SCREEN -->
+        <rect x="13.5mm" y="35mm" width="28mm" height="15mm" stroke="white" stroke-width="1" stroke-dasharray="10 10" fill-opacity="0" />
+
+        <!-- NAV BUTTONS -->
+        <rect x="15mm" y="65mm" width="10mm" height="10mm" stroke="white" stroke-width="1" stroke-dasharray="10 10" fill-opacity="0" />
+        <rect x="30mm" y="65mm" width="10mm" height="10mm" stroke="white" stroke-width="1" stroke-dasharray="10 10" fill-opacity="0" />
+        <rect x="15mm" y="80mm" width="10mm" height="10mm" stroke="white" stroke-width="1" stroke-dasharray="10 10" fill-opacity="0" />
+        <text x="19.5mm" y="93mm" font-family="sans-serif" font-size="2mm" textLength="2mm" fill="white">&lt;</text>
+        <rect x="30mm" y="80mm" width="10mm" height="10mm" stroke="white" stroke-width="1" stroke-dasharray="10 10" fill-opacity="0" />
+        <text x="34.5mm" y="93mm" font-family="sans-serif" font-size="2mm" textLength="5mm" fill="white">&gt;</text>
+        <rect x="15mm" y="95mm" width="10mm" height="10mm" stroke="white" stroke-width="1" stroke-dasharray="10 10" fill-opacity="0" />
+        <text x="17mm" y="108mm" font-family="sans-serif" font-size="2mm" textLength="6mm" fill="white">PLAY</text>
+        <rect x="30mm" y="95mm" width="10mm" height="10mm" stroke="white" stroke-width="1" stroke-dasharray="10 10" fill-opacity="0" />
+        <text x="32.5mm" y="108mm" font-family="sans-serif" font-size="2mm" textLength="5mm" fill="white">REC</text>
+
+        <!-- KNOBS -->
+        <circle cx="18mm" cy="20mm" r="6.35mm" stroke="white" stroke-width="1" stroke-dasharray="10 10" fill-opacity="0"/>
+        <text x="12mm" y="31mm" font-family="sans-serif" font-size="3mm" textLength="12mm" fill="white">VOLUME</text>
+        <circle cx="37mm" cy="20mm" r="6.35mm" stroke="white" stroke-width="1" stroke-dasharray="10 10" fill-opacity="0"/>
+        <text x="33mm" y="31mm" font-family="sans-serif" font-size="3mm" textLength="8mm" fill="white">DATA</text>
+
+        <circle cx="64mm" cy="20mm" r="6.35mm" stroke="white" stroke-width="1" stroke-dasharray="10 10" fill-opacity="0"/>
+        <text x="62.5mm" y="31mm" font-family="sans-serif" font-size="3mm" textLength="3mm" fill="white">T1</text>
+        <circle cx="79mm" cy="20mm" r="6.35mm" stroke="white" stroke-width="1" stroke-dasharray="10 10" fill-opacity="0"/>
+        <text x="77.25mm" y="31mm" font-family="sans-serif" font-size="3mm" textLength="3.5mm" fill="white">T2</text>
+        <circle cx="94mm" cy="20mm" r="6.35mm" stroke="white" stroke-width="1" stroke-dasharray="10 10" fill-opacity="0"/>
+        <text x="92.25mm" y="31mm" font-family="sans-serif" font-size="3mm" textLength="3.5mm" fill="white">T3</text>
+        <circle cx="109mm" cy="20mm" r="6.35mm" stroke="white" stroke-width="1" stroke-dasharray="10 10" fill-opacity="0"/>
+        <text x="107.25mm" y="31mm" font-family="sans-serif" font-size="3mm" textLength="3.5mm" fill="white">T4</text>
+        <circle cx="124mm" cy="20mm" r="6.35mm" stroke="white" stroke-width="1" stroke-dasharray="10 10" fill-opacity="0"/>
+        <text x="122.25mm" y="31mm" font-family="sans-serif" font-size="3mm" textLength="3.5mm" fill="white">T5</text>
+        <circle cx="139mm" cy="20mm" r="6.35mm" stroke="white" stroke-width="1" stroke-dasharray="10 10" fill-opacity="0"/>
+        <text x="137.25mm" y="31mm" font-family="sans-serif" font-size="3mm" textLength="3.5mm" fill="white">T6</text>
+        <circle cx="154mm" cy="20mm" r="6.35mm" stroke="white" stroke-width="1" stroke-dasharray="10 10" fill-opacity="0"/>
+        <text x="152.25mm" y="31mm" font-family="sans-serif" font-size="3mm" textLength="3.5mm" fill="white">T7</text>
+        <circle cx="169mm" cy="20mm" r="6.35mm" stroke="white" stroke-width="1" stroke-dasharray="10 10" fill-opacity="0"/>
+        <text x="167.25mm" y="31mm" font-family="sans-serif" font-size="3mm" textLength="3.5mm" fill="white">T8</text>
+
+        <!-- GRID BUTTONS -->
+        <rect x="59mm" y="35mm" width="10mm" height="10mm" stroke="white" stroke-width="1" stroke-dasharray="10 10" fill-opacity="0" />
+        <text x="60.5mm" y="48mm" font-family="sans-serif" font-size="2mm" textLength="7mm" fill="white">TRACK</text>
+        <rect x="74mm" y="35mm" width="10mm" height="10mm" stroke="white" stroke-width="1" stroke-dasharray="10 10" fill-opacity="0" />
+        <text x="77mm" y="48mm" font-family="sans-serif" font-size="2mm" textLength="4mm" fill="white">SEQ</text>
+        <rect x="89mm" y="35mm" width="10mm" height="10mm" stroke="white" stroke-width="1" stroke-dasharray="10 10" fill-opacity="0" />
+        <text x="91.5mm" y="48mm" font-family="sans-serif" font-size="2mm" textLength="5mm" fill="white">NOTE</text>
+        <rect x="104mm" y="35mm" width="10mm" height="10mm" stroke="white" stroke-width="1" stroke-dasharray="10 10" fill-opacity="0" />
+        <text x="106.5mm" y="48mm" font-family="sans-serif" font-size="2mm" textLength="5mm" fill="white">CLIP</text>
+        <rect x="119mm" y="35mm" width="10mm" height="10mm" stroke="white" stroke-width="1" stroke-dasharray="10 10" fill-opacity="0" />
+        <text x="120.5mm" y="48mm" font-family="sans-serif" font-size="2mm" textLength="7mm" fill="white">SCENE</text>
+        <rect x="134mm" y="35mm" width="10mm" height="10mm" stroke="white" stroke-width="1" stroke-dasharray="10 10" fill-opacity="0" />
+        <text x="135.5mm" y="48mm" font-family="sans-serif" font-size="2mm" textLength="7mm" fill="white">MIXER</text>
+        <rect x="149mm" y="35mm" width="10mm" height="10mm" stroke="white" stroke-width="1" stroke-dasharray="10 10" fill-opacity="0" />
+        <text x="149.5mm" y="48mm" font-family="sans-serif" font-size="2mm" textLength="9mm" fill="white">PROJECT</text>
+        <rect x="164mm" y="35mm" width="10mm" height="10mm" stroke="white" stroke-width="1" stroke-dasharray="10 10" fill-opacity="0" />
+        <text x="60.5mm" y="48mm" font-family="sans-serif" font-size="2mm" textLength="7mm" fill="white">TRACK</text>
+
+        <rect x="59mm" y="50mm" width="10mm" height="10mm" stroke="white" stroke-width="1" stroke-dasharray="10 10" fill-opacity="0" />
+        <text x="62mm" y="63mm" font-family="sans-serif" font-size="2mm" textLength="4mm" fill="white">OSC</text>
+        <rect x="74mm" y="50mm" width="10mm" height="10mm" stroke="white" stroke-width="1" stroke-dasharray="10 10" fill-opacity="0" />
+        <text x="76mm" y="63mm" font-family="sans-serif" font-size="2mm" textLength="6mm" fill="white">FILTER</text>
+        <rect x="89mm" y="50mm" width="10mm" height="10mm" stroke="white" stroke-width="1" stroke-dasharray="10 10" fill-opacity="0" />
+        <text x="92mm" y="63mm" font-family="sans-serif" font-size="2mm" textLength="4mm" fill="white">LFO</text>
+        <rect x="104mm" y="50mm" width="10mm" height="10mm" stroke="white" stroke-width="1" stroke-dasharray="10 10" fill-opacity="0" />
+        <text x="107mm" y="63mm" font-family="sans-serif" font-size="2mm" textLength="4mm" fill="white">ENV</text>
+        <rect x="119mm" y="50mm" width="10mm" height="10mm" stroke="white" stroke-width="1" stroke-dasharray="10 10" fill-opacity="0" />
+        <text x="122.5mm" y="63mm" font-family="sans-serif" font-size="2mm" textLength="3mm" fill="white">FX</text>
+        <rect x="134mm" y="50mm" width="10mm" height="10mm" stroke="white" stroke-width="1" stroke-dasharray="10 10" fill-opacity="0" />
+        <rect x="149mm" y="50mm" width="10mm" height="10mm" stroke="white" stroke-width="1" stroke-dasharray="10 10" fill-opacity="0" />
+        <rect x="164mm" y="50mm" width="10mm" height="10mm" stroke="white" stroke-width="1" stroke-dasharray="10 10" fill-opacity="0" />
+
+        <rect x="59mm" y="65mm" width="10mm" height="10mm" stroke="white" stroke-width="1" stroke-dasharray="10 10" fill-opacity="0" />
+        <rect x="74mm" y="65mm" width="10mm" height="10mm" stroke="white" stroke-width="1" stroke-dasharray="10 10" fill-opacity="0" />
+        <rect x="89mm" y="65mm" width="10mm" height="10mm" stroke="white" stroke-width="1" stroke-dasharray="10 10" fill-opacity="0" />
+        <rect x="104mm" y="65mm" width="10mm" height="10mm" stroke="white" stroke-width="1" stroke-dasharray="10 10" fill-opacity="0" />
+        <rect x="119mm" y="65mm" width="10mm" height="10mm" stroke="white" stroke-width="1" stroke-dasharray="10 10" fill-opacity="0" />
+        <rect x="134mm" y="65mm" width="10mm" height="10mm" stroke="white" stroke-width="1" stroke-dasharray="10 10" fill-opacity="0" />
+        <rect x="149mm" y="65mm" width="10mm" height="10mm" stroke="white" stroke-width="1" stroke-dasharray="10 10" fill-opacity="0" />
+        <rect x="164mm" y="65mm" width="10mm" height="10mm" stroke="white" stroke-width="1" stroke-dasharray="10 10" fill-opacity="0" />
+
+        <rect x="59mm" y="80mm" width="10mm" height="10mm" stroke="white" stroke-width="1" stroke-dasharray="10 10" fill-opacity="0" />
+        <text x="60.5mm" y="93mm" font-family="sans-serif" font-size="2mm" textLength="7mm" fill="white">COW/9</text>
+        <rect x="74mm" y="80mm" width="10mm" height="10mm" stroke="white" stroke-width="1" stroke-dasharray="10 10" fill-opacity="0" />
+        <text x="76mm" y="93mm" font-family="sans-serif" font-size="2mm" textLength="6mm" fill="white">RIM/10</text>
+        <rect x="89mm" y="80mm" width="10mm" height="10mm" stroke="white" stroke-width="1" stroke-dasharray="10 10" fill-opacity="0" />
+        <text x="90mm" y="93mm" font-family="sans-serif" font-size="2mm" textLength="8mm" fill="white">CLAP/11</text>
+        <rect x="104mm" y="80mm" width="10mm" height="10mm" stroke="white" stroke-width="1" stroke-dasharray="10 10" fill-opacity="0" />
+        <text x="105mm" y="93mm" font-family="sans-serif" font-size="2mm" textLength="8mm" fill="white">TAMB/12</text>
+        <rect x="119mm" y="80mm" width="10mm" height="10mm" stroke="white" stroke-width="1" stroke-dasharray="10 10" fill-opacity="0" />
+        <text x="120.5mm" y="93mm" font-family="sans-serif" font-size="2mm" textLength="7mm" fill="white">CHH/13</text>
+        <rect x="134mm" y="80mm" width="10mm" height="10mm" stroke="white" stroke-width="1" stroke-dasharray="10 10" fill-opacity="0" />
+        <text x="135.5mm" y="93mm" font-family="sans-serif" font-size="2mm" textLength="7mm" fill="white">OHH/14</text>
+        <rect x="149mm" y="80mm" width="10mm" height="10mm" stroke="white" stroke-width="1" stroke-dasharray="10 10" fill-opacity="0" />
+        <text x="149.5mm" y="93mm" font-family="sans-serif" font-size="2mm" textLength="9mm" fill="white">CRASH/15</text>
+        <rect x="164mm" y="80mm" width="10mm" height="10mm" stroke="white" stroke-width="1" stroke-dasharray="10 10" fill-opacity="0" />
+        <text x="165.5mm" y="93mm" font-family="sans-serif" font-size="2mm" textLength="7mm" fill="white">RIDE/16</text>
+
+        <rect x="59mm" y="95mm" width="10mm" height="10mm" stroke="white" stroke-width="1" stroke-dasharray="10 10" fill-opacity="0" />
+        <text x="61mm" y="108mm" font-family="sans-serif" font-size="2mm" textLength="6mm" fill="white">KICK/1</text>
+        <rect x="74mm" y="95mm" width="10mm" height="10mm" stroke="white" stroke-width="1" stroke-dasharray="10 10" fill-opacity="0" />
+        <text x="75mm" y="108mm" font-family="sans-serif" font-size="2mm" textLength="8mm" fill="white">SNARE/2</text>
+        <rect x="89mm" y="95mm" width="10mm" height="10mm" stroke="white" stroke-width="1" stroke-dasharray="10 10" fill-opacity="0" />
+        <text x="90mm" y="108mm" font-family="sans-serif" font-size="2mm" textLength="8mm" fill="white">SNARE/3</text>
+        <rect x="104mm" y="95mm" width="10mm" height="10mm" stroke="white" stroke-width="1" stroke-dasharray="10 10" fill-opacity="0" />
+        <text x="105.5mm" y="108mm" font-family="sans-serif" font-size="2mm" textLength="7mm" fill="white">TOM1/4</text>
+        <rect x="119mm" y="95mm" width="10mm" height="10mm" stroke="white" stroke-width="1" stroke-dasharray="10 10" fill-opacity="0" />
+        <text x="120.5mm" y="108mm" font-family="sans-serif" font-size="2mm" textLength="7mm" fill="white">TOM2/5</text>
+        <rect x="134mm" y="95mm" width="10mm" height="10mm" stroke="white" stroke-width="1" stroke-dasharray="10 10" fill-opacity="0" />
+        <text x="135.5mm" y="108mm" font-family="sans-serif" font-size="2mm" textLength="7mm" fill="white">TOM3/6</text>
+        <rect x="149mm" y="95mm" width="10mm" height="10mm" stroke="white" stroke-width="1" stroke-dasharray="10 10" fill-opacity="0" />
+        <text x="150mm" y="108mm" font-family="sans-serif" font-size="2mm" textLength="8mm" fill="white">PERC1/7</text>
+        <rect x="164mm" y="95mm" width="10mm" height="10mm" stroke="white" stroke-width="1" stroke-dasharray="10 10" fill-opacity="0" />
+        <text x="165mm" y="108mm" font-family="sans-serif" font-size="2mm" textLength="8mm" fill="white">PERC2/8</text>
+    </g>
+
+    <g id="color"></g>
+    <g id="gloss-m"></g>
+    <g id="visual" opacity="1">
+        <!-- ENCLOSURE -->
+        <rect rx="5mm" ry="5mm" width="100%" height="100%" fill="url(#enclosure-grad)" stroke="url(#enclosure-stroke-grad)" stroke-width="3mm" stroke-opacity="0.7" />
+        <rect rx="5mm" ry="5mm" width="100%" height="100%" filter="url(#noise)" opacity="0.3"/>
+
+        <!-- SCREEN -->
+        <rect x="13.5mm" y="35mm" width="28mm" height="15mm" stroke="#333344" stroke-width="2" fill="#222233" />
+        <text x="14.5mm" y="38mm" fill="#eeeeee" font-family="monospace">Hello,</text>
+        <text x="14.5mm" y="42mm" fill="#eeeeee" font-family="monospace">Restrictor!</text>
+
+        <!-- NAV BUTTONS -->
+        <rect x="15mm" y="65mm" rx="1mm" width="10mm" height="10mm" stroke="#777788" stroke-width="2" fill="url(#pad-grad)" filter="url(#pad-shadow)" />
+        <rect x="30mm" y="65mm" rx="1mm" width="10mm" height="10mm" stroke="#777788" stroke-width="2" fill="url(#pad-grad)" filter="url(#pad-shadow)" />
+        <rect x="15mm" y="80mm" rx="1mm" width="10mm" height="10mm" stroke="#777788" stroke-width="2" fill="url(#pad-grad)" filter="url(#pad-shadow)" />
+        <rect x="30mm" y="80mm" rx="1mm" width="10mm" height="10mm" stroke="#777788" stroke-width="2" fill="url(#pad-grad)" filter="url(#pad-shadow)" />
+        <rect x="15mm" y="95mm" rx="1mm" width="10mm" height="10mm" stroke="#777788" stroke-width="2" fill="url(#pad-grad)" filter="url(#pad-shadow)" />
+        <rect x="30mm" y="95mm" rx="1mm" width="10mm" height="10mm" stroke="#777788" stroke-width="2" fill="url(#pad-grad)" filter="url(#pad-shadow)" />
+
+        <!-- KNOBS -->
+        <circle cx="18mm" cy="20mm" r="6mm" stroke="#3c3c42" stroke-width="1.5mm" fill="#434347" filter="url(#knob-shadow)"/>
+        <circle cx="18mm" cy="20mm" r="6mm" stroke="#3c3c42" stroke-width="1.5mm" fill="#434347"/>
+        <circle cx="18mm" cy="20mm" r="6mm" stroke="url(#knob-stroke-grad)" stroke-width="1.5mm" fill="url(#knob-grad)"/>
+        <circle cx="18mm" cy="20mm" r="6mm" stroke="url(#knob-stroke-grad)" stroke-width="1.5mm" fill-opacity="0"/>
+        <rect x="17.5mm" y="12.75mm" width="1mm" height="1.5mm" fill="white" style="z-index:999;" />
+        <circle cx="37mm" cy="20mm" r="6mm" stroke="#3c3c42" stroke-width="1.5mm" fill="#434347" filter="url(#knob-shadow)"/>
+        <circle cx="37mm" cy="20mm" r="6mm" stroke="#3c3c42" stroke-width="1.5mm" fill="#434347"/>
+        <circle cx="37mm" cy="20mm" r="6mm" stroke="url(#knob-stroke-grad)" stroke-width="1.5mm" fill="url(#knob-grad)"/>
+        <circle cx="37mm" cy="20mm" r="6mm" stroke="url(#knob-stroke-grad)" stroke-width="1.5mm" fill-opacity="0"/>
+
+        <circle cx="64mm" cy="20mm" r="6mm" stroke="#3c3c42" stroke-width="1.5mm" fill="#434347" filter="url(#knob-shadow)"/>
+        <circle cx="64mm" cy="20mm" r="6mm" stroke="#3c3c42" stroke-width="1.5mm" fill="#434347"/>
+        <circle cx="64mm" cy="20mm" r="6mm" stroke="url(#knob-stroke-grad)" stroke-width="1.5mm" fill="url(#knob-grad)"/>
+        <circle cx="64mm" cy="20mm" r="6mm" stroke="url(#knob-stroke-grad)" stroke-width="1.5mm" fill-opacity="0"/>
+        <rect x="63.5mm" y="12.75mm" width="1mm" height="1.5mm" fill="white" style="z-index:999;" />
+        <circle cx="79mm" cy="20mm" r="6mm" stroke="#3c3c42" stroke-width="1.5mm" fill="#434347" filter="url(#knob-shadow)"/>
+        <circle cx="79mm" cy="20mm" r="6mm" stroke="#3c3c42" stroke-width="1.5mm" fill="#434347"/>
+        <circle cx="79mm" cy="20mm" r="6mm" stroke="url(#knob-stroke-grad)" stroke-width="1.5mm" fill="url(#knob-grad)"/>
+        <circle cx="79mm" cy="20mm" r="6mm" stroke="url(#knob-stroke-grad)" stroke-width="1.5mm" fill-opacity="0"/>
+        <rect x="78.5mm" y="12.75mm" width="1mm" height="1.5mm" fill="white" style="z-index:999;" />
+        <circle cx="94mm" cy="20mm" r="6mm" stroke="#3c3c42" stroke-width="1.5mm" fill="#434347" filter="url(#knob-shadow)"/>
+        <circle cx="94mm" cy="20mm" r="6mm" stroke="#3c3c42" stroke-width="1.5mm" fill="#434347"/>
+        <circle cx="94mm" cy="20mm" r="6mm" stroke="url(#knob-stroke-grad)" stroke-width="1.5mm" fill="url(#knob-grad)"/>
+        <circle cx="94mm" cy="20mm" r="6mm" stroke="url(#knob-stroke-grad)" stroke-width="1.5mm" fill-opacity="0"/>
+        <rect x="93.5mm" y="12.75mm" width="1mm" height="1.5mm" fill="white" style="z-index:999;" />
+        <circle cx="109mm" cy="20mm" r="6mm" stroke="#3c3c42" stroke-width="1.5mm" fill="#434347" filter="url(#knob-shadow)"/>
+        <circle cx="109mm" cy="20mm" r="6mm" stroke="#3c3c42" stroke-width="1.5mm" fill="#434347"/>
+        <circle cx="109mm" cy="20mm" r="6mm" stroke="url(#knob-stroke-grad)" stroke-width="1.5mm" fill="url(#knob-grad)"/>
+        <circle cx="109mm" cy="20mm" r="6mm" stroke="url(#knob-stroke-grad)" stroke-width="1.5mm" fill-opacity="0"/>
+        <rect x="108.5mm" y="12.75mm" width="1mm" height="1.5mm" fill="white" style="z-index:999;" />
+        <circle cx="124mm" cy="20mm" r="6mm" stroke="#3c3c42" stroke-width="1.5mm" fill="#434347" filter="url(#knob-shadow)"/>
+        <circle cx="124mm" cy="20mm" r="6mm" stroke="#3c3c42" stroke-width="1.5mm" fill="#434347"/>
+        <circle cx="124mm" cy="20mm" r="6mm" stroke="url(#knob-stroke-grad)" stroke-width="1.5mm" fill="url(#knob-grad)"/>
+        <circle cx="124mm" cy="20mm" r="6mm" stroke="url(#knob-stroke-grad)" stroke-width="1.5mm" fill-opacity="0"/>
+        <rect x="123.5mm" y="12.75mm" width="1mm" height="1.5mm" fill="white" style="z-index:999;" />
+        <circle cx="139mm" cy="20mm" r="6mm" stroke="#3c3c42" stroke-width="1.5mm" fill="#434347" filter="url(#knob-shadow)"/>
+        <circle cx="139mm" cy="20mm" r="6mm" stroke="#3c3c42" stroke-width="1.5mm" fill="#434347"/>
+        <circle cx="139mm" cy="20mm" r="6mm" stroke="url(#knob-stroke-grad)" stroke-width="1.5mm" fill="url(#knob-grad)"/>
+        <circle cx="139mm" cy="20mm" r="6mm" stroke="url(#knob-stroke-grad)" stroke-width="1.5mm" fill-opacity="0"/>
+        <rect x="138.5mm" y="12.75mm" width="1mm" height="1.5mm" fill="white" style="z-index:999;" />
+        <circle cx="154mm" cy="20mm" r="6mm" stroke="#3c3c42" stroke-width="1.5mm" fill="#434347" filter="url(#knob-shadow)"/>
+        <circle cx="154mm" cy="20mm" r="6mm" stroke="#3c3c42" stroke-width="1.5mm" fill="#434347"/>
+        <circle cx="154mm" cy="20mm" r="6mm" stroke="url(#knob-stroke-grad)" stroke-width="1.5mm" fill="url(#knob-grad)"/>
+        <circle cx="154mm" cy="20mm" r="6mm" stroke="url(#knob-stroke-grad)" stroke-width="1.5mm" fill-opacity="0"/>
+        <rect x="153.5mm" y="12.75mm" width="1mm" height="1.5mm" fill="white" style="z-index:999;" />
+        <circle cx="169mm" cy="20mm" r="6mm" stroke="#3c3c42" stroke-width="1.5mm" fill="#434347" filter="url(#knob-shadow)"/>
+        <circle cx="169mm" cy="20mm" r="6mm" stroke="#3c3c42" stroke-width="1.5mm" fill="#434347"/>
+        <circle cx="169mm" cy="20mm" r="6mm" stroke="url(#knob-stroke-grad)" stroke-width="1.5mm" fill="url(#knob-grad)"/>
+        <circle cx="169mm" cy="20mm" r="6mm" stroke="url(#knob-stroke-grad)" stroke-width="1.5mm" fill-opacity="0"/>
+        <rect x="168.5mm" y="12.75mm" width="1mm" height="1.5mm" fill="white" style="z-index:999;" />
+
+        <!-- GRID BUTTONS -->
+        <rect x="59mm" y="35mm" rx="1mm" width="10mm" height="10mm" stroke="#777788" stroke-width="2" fill="url(#pad-grad)" filter="url(#pad-shadow)" />
+        <rect x="74mm" y="35mm" rx="1mm" width="10mm" height="10mm" stroke="#777788" stroke-width="2" fill="url(#pad-grad)" filter="url(#pad-shadow)" />
+        <rect x="89mm" y="35mm" rx="1mm" width="10mm" height="10mm" stroke="#777788" stroke-width="2" fill="url(#pad-grad)" filter="url(#pad-shadow)" />
+        <rect x="104mm" y="35mm" rx="1mm" width="10mm" height="10mm" stroke="#777788" stroke-width="2" fill="url(#pad-grad)" filter="url(#pad-shadow)" />
+        <rect x="119mm" y="35mm" rx="1mm" width="10mm" height="10mm" stroke="#777788" stroke-width="2" fill="url(#pad-grad)" filter="url(#pad-shadow)" />
+        <rect x="134mm" y="35mm" rx="1mm" width="10mm" height="10mm" stroke="#777788" stroke-width="2" fill="url(#pad-grad)" filter="url(#pad-shadow)" />
+        <rect x="149mm" y="35mm" rx="1mm" width="10mm" height="10mm" stroke="#777788" stroke-width="2" fill="url(#pad-grad)" filter="url(#pad-shadow)" />
+        <rect x="164mm" y="35mm" rx="1mm" width="10mm" height="10mm" stroke="#777788" stroke-width="2" fill="url(#pad-grad)" filter="url(#pad-shadow)" />
+
+        <rect x="59mm" y="50mm" rx="1mm" width="10mm" height="10mm" stroke="#777788" stroke-width="2" fill="url(#pad-grad)" filter="url(#pad-shadow)" />
+        <rect x="74mm" y="50mm" rx="1mm" width="10mm" height="10mm" stroke="#777788" stroke-width="2" fill="url(#pad-grad)" filter="url(#pad-shadow)" />
+        <rect x="89mm" y="50mm" rx="1mm" width="10mm" height="10mm" stroke="#777788" stroke-width="2" fill="url(#pad-grad)" filter="url(#pad-shadow)" />
+        <rect x="104mm" y="50mm" rx="1mm" width="10mm" height="10mm" stroke="#777788" stroke-width="2" fill="url(#pad-grad)" filter="url(#pad-shadow)" />
+        <rect x="119mm" y="50mm" rx="1mm" width="10mm" height="10mm" stroke="#777788" stroke-width="2" fill="url(#pad-grad)" filter="url(#pad-shadow)" />
+        <rect x="134mm" y="50mm" rx="1mm" width="10mm" height="10mm" stroke="#777788" stroke-width="2" fill="url(#pad-grad)" filter="url(#pad-shadow)" />
+        <rect x="149mm" y="50mm" rx="1mm" width="10mm" height="10mm" stroke="#777788" stroke-width="2" fill="url(#pad-grad)" filter="url(#pad-shadow)" />
+        <rect x="164mm" y="50mm" rx="1mm" width="10mm" height="10mm" stroke="#777788" stroke-width="2" fill="url(#pad-grad)" filter="url(#pad-shadow)" />
+
+        <rect x="59mm" y="65mm" rx="1mm" width="10mm" height="10mm" stroke="#777788" stroke-width="2" fill="url(#pad-grad)" filter="url(#pad-shadow)" />
+        <rect x="74mm" y="65mm" rx="1mm" width="10mm" height="10mm" stroke="#777788" stroke-width="2" fill="url(#pad-grad)" filter="url(#pad-shadow)" />
+        <rect x="89mm" y="65mm" rx="1mm" width="10mm" height="10mm" stroke="#777788" stroke-width="2" fill="url(#pad-grad)" filter="url(#pad-shadow)" />
+        <rect x="104mm" y="65mm" rx="1mm" width="10mm" height="10mm" stroke="#777788" stroke-width="2" fill="url(#pad-grad)" filter="url(#pad-shadow)" />
+        <rect x="119mm" y="65mm" rx="1mm" width="10mm" height="10mm" stroke="#777788" stroke-width="2" fill="url(#pad-grad)" filter="url(#pad-shadow)" />
+        <rect x="134mm" y="65mm" rx="1mm" width="10mm" height="10mm" stroke="#777788" stroke-width="2" fill="url(#pad-grad)" filter="url(#pad-shadow)" />
+        <rect x="149mm" y="65mm" rx="1mm" width="10mm" height="10mm" stroke="#777788" stroke-width="2" fill="url(#pad-grad)" filter="url(#pad-shadow)" />
+        <rect x="164mm" y="65mm" rx="1mm" width="10mm" height="10mm" stroke="#777788" stroke-width="2" fill="url(#pad-grad)" filter="url(#pad-shadow)" />
+
+        <rect x="59mm" y="80mm" rx="1mm" width="10mm" height="10mm" stroke="#777788" stroke-width="2" fill="url(#pad-grad)" filter="url(#pad-shadow)" />
+        <rect x="74mm" y="80mm" rx="1mm" width="10mm" height="10mm" stroke="#777788" stroke-width="2" fill="url(#pad-grad)" filter="url(#pad-shadow)" />
+        <rect x="89mm" y="80mm" rx="1mm" width="10mm" height="10mm" stroke="#777788" stroke-width="2" fill="url(#pad-grad)" filter="url(#pad-shadow)" />
+        <rect x="104mm" y="80mm" rx="1mm" width="10mm" height="10mm" stroke="#777788" stroke-width="2" fill="url(#pad-grad)" filter="url(#pad-shadow)" />
+        <rect x="119mm" y="80mm" rx="1mm" width="10mm" height="10mm" stroke="#777788" stroke-width="2" fill="url(#pad-grad)" filter="url(#pad-shadow)" />
+        <rect x="134mm" y="80mm" rx="1mm" width="10mm" height="10mm" stroke="#777788" stroke-width="2" fill="url(#pad-grad)" filter="url(#pad-shadow)" />
+        <rect x="149mm" y="80mm" rx="1mm" width="10mm" height="10mm" stroke="#777788" stroke-width="2" fill="url(#pad-grad)" filter="url(#pad-shadow)" />
+        <rect x="164mm" y="80mm" rx="1mm" width="10mm" height="10mm" stroke="#777788" stroke-width="2" fill="url(#pad-grad)" filter="url(#pad-shadow)" />
+
+        <rect x="59mm" y="95mm" rx="1mm" width="10mm" height="10mm" stroke="#777788" stroke-width="2" fill="url(#pad-grad)" filter="url(#pad-shadow)" />
+        <rect x="74mm" y="95mm" rx="1mm" width="10mm" height="10mm" stroke="#777788" stroke-width="2" fill="url(#pad-grad)" filter="url(#pad-shadow)" />
+        <rect x="89mm" y="95mm" rx="1mm" width="10mm" height="10mm" stroke="#777788" stroke-width="2" fill="url(#pad-grad)" filter="url(#pad-shadow)" />
+        <rect x="104mm" y="95mm" rx="1mm" width="10mm" height="10mm" stroke="#777788" stroke-width="2" fill="url(#pad-grad)" filter="url(#pad-shadow)" />
+        <rect x="119mm" y="95mm" rx="1mm" width="10mm" height="10mm" stroke="#777788" stroke-width="2" fill="url(#pad-grad)" filter="url(#pad-shadow)" />
+        <rect x="134mm" y="95mm" rx="1mm" width="10mm" height="10mm" stroke="#777788" stroke-width="2" fill="url(#pad-grad)" filter="url(#pad-shadow)" />
+        <rect x="149mm" y="95mm" rx="1mm" width="10mm" height="10mm" stroke="#777788" stroke-width="2" fill="url(#pad-grad)" filter="url(#pad-shadow)" />
+        <rect x="164mm" y="95mm" rx="1mm" width="10mm" height="10mm" stroke="#777788" stroke-width="2" fill="url(#pad-grad)" filter="url(#pad-shadow)" />
+    </g>
+
+</svg>
